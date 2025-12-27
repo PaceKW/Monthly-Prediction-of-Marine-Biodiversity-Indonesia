@@ -49,27 +49,13 @@ SST is used as an environmental explanatory variable and aggregated to match the
 
 ---
 
-## Methodology
-
-1. **Data Preparation**
-   - OBIS data are aggregated into monthly observation counts.
-   - SST data are aggregated into monthly mean values.
-
-2. **Data Integration**
-   - Monthly biodiversity and SST datasets are merged using year and month.
-
-3. **Train–Test Split**
-   - Temporal splitting is applied to prevent data leakage.
-   - Earlier years are used for training.
-   - Recent months are reserved for testing.
-
-4. **Modeling**
-   - A Linear Regression model is trained using monthly mean SST as the input feature.
-   - Monthly observation count is used as the target variable.
-
-5. **Evaluation**
-   - Model performance is assessed using Root Mean Squared Error (RMSE).
-   - Observed and predicted values are compared visually.
+## Methodology  
+1. Aggregate OBIS observation counts into monthly time series.  
+2. Aggregate SST into monthly mean values.  
+3. Merge biodiversity and SST data using year and month.  
+4. Apply a train/test split (temporal) to avoid leakage.  
+5. Train a simple Linear Regression model using SST as the feature.  
+6. Evaluate using Root Mean Squared Error (RMSE) and visual comparison.
 
 ---
 
@@ -83,11 +69,13 @@ The model is intentionally simple to prioritize interpretability and reduce over
 
 ---
 
-## Key Findings
+## Key Findings  
 
-- Monthly sea surface temperature contains informative signal related to biodiversity observation intensity.
-- The model captures general temporal patterns but does not fully explain observation variability.
-- Predictions should be interpreted as **estimates for data-limited periods**, not ecological forecasts.
+- SST contains temporal signals that relate to observed marine biodiversity intensity.  
+- The model captures broad temporal patterns but cannot fully explain variability.  
+- Results are *estimates of data-limited observation patterns*, not ecological forecasts.
+
+
 
 ---
 
@@ -100,12 +88,13 @@ The model is intentionally simple to prioritize interpretability and reduce over
 
 ---
 
-## Conclusion
+## Intended Use  
 
-This project demonstrates a realistic application of machine learning to estimate marine biodiversity observation intensity using environmental data.  
-By operating at a monthly resolution and integrating biological and environmental datasets, the analysis aligns with real-world challenges in marine biodiversity monitoring.
+This project supports:  
+- Exploratory pattern analysis  
+- Research discussion and hypothesis generation  
+- Preliminary modelling of data-limited marine monitoring scenarios
 
-The emphasis of this project is on **responsible modeling, transparent assumptions, and practical relevance**.
 
 ---
 
@@ -122,3 +111,5 @@ The emphasis of this project is on **responsible modeling, transparent assumptio
 **Henry Kevin**  
 Background: Information Systems | Data Science | Machine Learning  
 Focus: Environmental Data Analysis & Marine Biodiversity
+
+_Notes: This analysis reflects a **junior-level, research-oriented approach** emphasizing transparency, responsible interpretation, and rigorous documentation._
